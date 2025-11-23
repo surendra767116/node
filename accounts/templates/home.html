@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 90%;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .feature h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        .feature ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .feature li {
+            padding: 5px 0;
+            color: #666;
+        }
+        .feature li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        .admin-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .admin-link a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .admin-link a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .description {
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍕 Food Delivery Application</h1>
+        <p class="description">
+            A comprehensive Django-based food delivery platform with complete functionality 
+            for customers, restaurants, delivery partners, and administrators.
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>👥 Customer Features</h3>
+                <ul>
+                    <li>Browse restaurants & menus</li>
+                    <li>Place orders</li>
+                    <li>Real-time tracking</li>
+                    <li>Reviews & ratings</li>
+                    <li>Multiple payment options</li>
+                </ul>
+            </div>
+            
+            <div class="feature">
+                <h3>🏪 Restaurant Dashboard</h3>
+                <ul>
+                    <li>Profile management</li>
+                    <li>Menu management</li>
+                    <li>Order processing</li>
+                    <li>Sales analytics</li>
+                    <li>Customer feedback</li>
+                </ul>
+            </div>
+            
+            <div class="feature">
+                <h3>🚗 Delivery Partner</h3>
+                <ul>
+                    <li>Registration & verification</li>
+                    <li>Order assignments</li>
+                    <li>Route navigation</li>
+                    <li>Earnings tracking</li>
+                    <li>Performance metrics</li>
+                </ul>
+            </div>
+            
+            <div class="feature">
+                <h3>⚙️ Admin Panel</h3>
+                <ul>
+                    <li>User management</li>
+                    <li>Commission tracking</li>
+                    <li>Promotions & discounts</li>
+                    <li>Fraud detection</li>
+                    <li>Support tickets</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="admin-link">
+            <a href="/admin/">Access Admin Panel →</a>
+        </div>
+    </div>
+</body>
+</html>
