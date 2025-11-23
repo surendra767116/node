@@ -12,6 +12,28 @@ def home(request):
         'title': 'Food Delivery App - Home'
     })
 
+def restaurants(request):
+    """Restaurants listing page"""
+    return render(request, 'restaurants.html')
+
+def restaurant_detail(request, restaurant_id):
+    """Restaurant detail and menu page"""
+    return render(request, 'restaurant_detail.html', {
+        'restaurant_id': restaurant_id
+    })
+
+def cart(request):
+    """Shopping cart page"""
+    return render(request, 'cart.html')
+
+def orders(request):
+    """Orders listing and tracking page"""
+    return render(request, 'orders.html')
+
+def profile(request):
+    """User profile page"""
+    return render(request, 'profile.html')
+
 @api_view(['POST'])
 def register_user(request):
     """API endpoint for user registration"""

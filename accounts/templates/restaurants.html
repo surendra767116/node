@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block title %}Browse Restaurants - Food Delivery App{% endblock %}
+
+{% block extra_style %}
+<style>
+    .search-section {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .search-box {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .search-input {
+        flex: 1;
+        padding: 12px 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 25px;
+        font-size: 16px;
+    }
+    
+    .search-btn {
+        padding: 12px 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .search-btn:hover {
+        transform: translateY(-2px);
+    }
+    
+    .filters {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .filter-btn {
+        padding: 8px 20px;
+        border: 2px solid #667eea;
+        background: white;
+        color: #667eea;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+        background: #667eea;
+        color: white;
+    }
+    
+    .restaurants-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .restaurant-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+    
+    .restaurant-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+    
+    .restaurant-image {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+    }
+    
+    .restaurant-info {
+        padding: 20px;
+    }
+    
+    .restaurant-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #2c3e50;
+    }
+    
+    .restaurant-cuisine {
+        color: #7f8c8d;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    
+    .restaurant-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    
+    .rating {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #f39c12;
+        font-weight: bold;
+    }
+    
+    .delivery-time {
+        color: #7f8c8d;
+        font-size: 14px;
+    }
+    
+    .badge {
+        display: inline-block;
+        padding: 5px 12px;
+        background: #e8f5e9;
+        color: #27ae60;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1 style="margin-bottom: 20px; color: #2c3e50;">🍽️ Browse Restaurants</h1>
+
+<div class="search-section">
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="Search for restaurants, cuisines, or dishes...">
+        <button class="search-btn">Search</button>
+    </div>
+    <div class="filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Italian</button>
+        <button class="filter-btn">Chinese</button>
+        <button class="filter-btn">Indian</button>
+        <button class="filter-btn">Mexican</button>
+        <button class="filter-btn">Fast Food</button>
+    </div>
+</div>
+
+<div class="restaurants-grid">
+    <div class="restaurant-card" onclick="window.location.href='/restaurant/1/'">
+        <div class="restaurant-image">🍕</div>
+        <div class="restaurant-info">
+            <div class="restaurant-name">Delicious Bites</div>
+            <div class="restaurant-cuisine">Italian, Pizza, Pasta</div>
+            <div class="badge">⚡ Fast Delivery</div>
+            <div class="restaurant-meta">
+                <div class="rating">
+                    ⭐ 4.5 (200+ ratings)
+                </div>
+                <div class="delivery-time">30 min</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="restaurant-card" onclick="window.location.href='/restaurant/2/'">
+        <div class="restaurant-image">🍜</div>
+        <div class="restaurant-info">
+            <div class="restaurant-name">Dragon Wok</div>
+            <div class="restaurant-cuisine">Chinese, Asian, Noodles</div>
+            <div class="badge">🔥 Popular</div>
+            <div class="restaurant-meta">
+                <div class="rating">
+                    ⭐ 4.7 (350+ ratings)
+                </div>
+                <div class="delivery-time">25 min</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="restaurant-card" onclick="window.location.href='/restaurant/3/'">
+        <div class="restaurant-image">🍛</div>
+        <div class="restaurant-info">
+            <div class="restaurant-name">Spice Kingdom</div>
+            <div class="restaurant-cuisine">Indian, Curry, Tandoori</div>
+            <div class="badge">✨ New</div>
+            <div class="restaurant-meta">
+                <div class="rating">
+                    ⭐ 4.6 (150+ ratings)
+                </div>
+                <div class="delivery-time">35 min</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="restaurant-card" onclick="window.location.href='/restaurant/4/'">
+        <div class="restaurant-image">🌮</div>
+        <div class="restaurant-info">
+            <div class="restaurant-name">Taco Fiesta</div>
+            <div class="restaurant-cuisine">Mexican, Tacos, Burritos</div>
+            <div class="badge">💰 Best Value</div>
+            <div class="restaurant-meta">
+                <div class="rating">
+                    ⭐ 4.4 (180+ ratings)
+                </div>
+                <div class="delivery-time">28 min</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="restaurant-card" onclick="window.location.href='/restaurant/5/'">
+        <div class="restaurant-image">🍔</div>
+        <div class="restaurant-info">
+            <div class="restaurant-name">Burger Hub</div>
+            <div class="restaurant-cuisine">American, Burgers, Fast Food</div>
+            <div class="badge">⚡ Fast Delivery</div>
+            <div class="restaurant-meta">
+                <div class="rating">
+                    ⭐ 4.3 (280+ ratings)
+                </div>
+                <div class="delivery-time">20 min</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="restaurant-card" onclick="window.location.href='/restaurant/6/'">
+        <div class="restaurant-image">🍣</div>
+        <div class="restaurant-info">
+            <div class="restaurant-name">Sushi Palace</div>
+            <div class="restaurant-cuisine">Japanese, Sushi, Ramen</div>
+            <div class="badge">⭐ Top Rated</div>
+            <div class="restaurant-meta">
+                <div class="rating">
+                    ⭐ 4.8 (420+ ratings)
+                </div>
+                <div class="delivery-time">40 min</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

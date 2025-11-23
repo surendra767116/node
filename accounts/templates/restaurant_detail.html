@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+
+{% block title %}Restaurant Menu - Food Delivery App{% endblock %}
+
+{% block extra_style %}
+<style>
+    .restaurant-header {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .restaurant-banner {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .restaurant-icon {
+        font-size: 100px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+    }
+    
+    .restaurant-details h1 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    
+    .restaurant-details .cuisine {
+        color: #7f8c8d;
+        margin-bottom: 15px;
+    }
+    
+    .restaurant-stats {
+        display: flex;
+        gap: 30px;
+        margin-top: 15px;
+    }
+    
+    .stat {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #555;
+    }
+    
+    .menu-section {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .category-title {
+        color: #2c3e50;
+        margin: 30px 0 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+        font-size: 24px;
+    }
+    
+    .category-title:first-child {
+        margin-top: 0;
+    }
+    
+    .menu-items {
+        display: grid;
+        gap: 20px;
+    }
+    
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        transition: all 0.3s;
+    }
+    
+    .menu-item:hover {
+        border-color: #667eea;
+        background: #f8f9fa;
+    }
+    
+    .item-info {
+        flex: 1;
+    }
+    
+    .item-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+    
+    .item-description {
+        color: #7f8c8d;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .item-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .item-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #27ae60;
+    }
+    
+    .item-type {
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .veg {
+        background: #e8f5e9;
+        color: #27ae60;
+    }
+    
+    .non-veg {
+        background: #ffebee;
+        color: #e74c3c;
+    }
+    
+    .add-btn {
+        padding: 10px 25px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .add-btn:hover {
+        transform: scale(1.05);
+    }
+    
+    .cart-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px 30px;
+        border-radius: 50px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="restaurant-header">
+    <div class="restaurant-banner">
+        <div class="restaurant-icon">🍕</div>
+        <div class="restaurant-details">
+            <h1>Delicious Bites</h1>
+            <div class="cuisine">Italian, Pizza, Pasta</div>
+            <div class="restaurant-stats">
+                <div class="stat">⭐ 4.5 (200+ ratings)</div>
+                <div class="stat">🕐 30 min</div>
+                <div class="stat">💰 $10 min order</div>
+                <div class="stat">🚚 $3.50 delivery</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="menu-section">
+    <h2 class="category-title">🥗 Appetizers</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Spring Rolls</div>
+                <div class="item-description">Crispy vegetable spring rolls served with sweet chili sauce</div>
+                <div class="item-footer">
+                    <div class="item-price">$6.99</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Garlic Bread</div>
+                <div class="item-description">Toasted bread with garlic butter and herbs</div>
+                <div class="item-footer">
+                    <div class="item-price">$4.99</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+    </div>
+    
+    <h2 class="category-title">🍕 Main Course</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Margherita Pizza</div>
+                <div class="item-description">Classic Italian pizza with fresh mozzarella and basil</div>
+                <div class="item-footer">
+                    <div class="item-price">$12.99</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Chicken Biryani</div>
+                <div class="item-description">Aromatic basmati rice with tender chicken and spices</div>
+                <div class="item-footer">
+                    <div class="item-price">$14.99</div>
+                    <span class="item-type non-veg">🔴 NON-VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Pasta Alfredo</div>
+                <div class="item-description">Creamy alfredo sauce with fettuccine pasta</div>
+                <div class="item-footer">
+                    <div class="item-price">$11.99</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+    </div>
+    
+    <h2 class="category-title">🍰 Desserts</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Chocolate Lava Cake</div>
+                <div class="item-description">Warm chocolate cake with molten center</div>
+                <div class="item-footer">
+                    <div class="item-price">$5.99</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+        
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Tiramisu</div>
+                <div class="item-description">Classic Italian dessert with coffee and mascarpone</div>
+                <div class="item-footer">
+                    <div class="item-price">$6.99</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+    </div>
+    
+    <h2 class="category-title">🥤 Beverages</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <div class="item-info">
+                <div class="item-name">Fresh Lime Soda</div>
+                <div class="item-description">Refreshing lime soda with a hint of mint</div>
+                <div class="item-footer">
+                    <div class="item-price">$3.49</div>
+                    <span class="item-type veg">🟢 VEG</span>
+                </div>
+            </div>
+            <button class="add-btn">Add +</button>
+        </div>
+    </div>
+</div>
+
+<div class="cart-float" onclick="window.location.href='/cart/'">
+    🛒 View Cart (3 items)
+</div>
+{% endblock %}
